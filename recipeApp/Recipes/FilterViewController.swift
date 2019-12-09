@@ -41,8 +41,12 @@ let filterList =
 
 class FilterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
+  var filters = Filters().getFilters()
+  let viewModel = FilterViewModel()
+  let alreadySelected = [String]()
+  
   @IBOutlet var filterTable: UITableView!
- 
+
   @IBAction func closeButton(_ sender: UIBarButtonItem) {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -85,11 +89,7 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     
     dismiss(animated: true, completion: nil)
   }
-  
-  var filters = Filters().getFilters()
-  let viewModel = FilterViewModel()
-  let alreadySelected = [String]()
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     filterTable?.allowsMultipleSelection = true
@@ -156,9 +156,9 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     viewModel.filters[indexPath.row].isSelected = false
     viewModel.didToggleSelection?(!viewModel.selectedFilters.isEmpty)
   }
-     
-   func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-      return indexPath
-    }
-  
+   
+ func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    return indexPath
+  }
+
 }

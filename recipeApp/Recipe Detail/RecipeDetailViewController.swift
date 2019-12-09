@@ -49,11 +49,16 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         }
 
       }
+      print("content height:")
+      print(ingredientsTable.contentSize.height)
+      print("table height:")
+      print(ingredientsTable.visibleSize.height)
+//      ingredientsTable.visibleSize.height = ingredientsTable.contentSize.height
         guard let fetchedRecipe = viewModel?.fetchRecipe("Recipe") else { return }
-        print("fetched recipe")
+//        print("fetched recipe")
 //        print(fetchedRecipe)
         for recipe in fetchedRecipe {
-            print(recipe.value(forKey: "name"))
+//            print(recipe.value(forKey: "name"))
         }
     }
     
@@ -90,8 +95,11 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
  
     }
   
-
-    
+    override func viewWillLayoutSubviews() {
+        super.updateViewConstraints()
+        self.tableHeight?.constant = self.ingredientsTable.intrinsicContentSize.height
+    }
+      
     //  Ingredients + Instructions table views
     
     
@@ -109,11 +117,13 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         if tableView == ingredientsTable {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! IngredientsTableCell
             cell.title?.text = viewModel?.ingredientTitleForRowAtIndexPath(indexPath)
+            self.ingredientsTable.sizeToFit()
             return cell
         } else if tableView == instructionsTable {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! InstructionsTableCell
             cell.title?.text = viewModel?.instructionForRowAtIndexPath(indexPath)
             cell.stepNumber?.text = viewModel?.instructionNumberForRowAtIndexPath(indexPath)
+            self.instructionsTable.sizeToFit()
             return cell
         }
         return UITableViewCell()
@@ -157,9 +167,9 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         newRecipe?.setValue(recipe.readyInMinutes!, forKey: "ready_in_minutes")
         newRecipe?.setValue(recipe.cheap!, forKey: "cheap")
         newRecipe?.setValue(recipe.instructions!, forKey: "instructions")
-        
-        print("new recipe")
-        print(newRecipe!)
+//
+//        print("new recipe")
+//        print(newRecipe!)
         do {
             try context.save()
             print("context was saved")

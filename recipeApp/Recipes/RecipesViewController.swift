@@ -49,7 +49,6 @@ class RecipesViewController: UIViewController, UICollectionViewDataSource, UICol
   }
   
 
-  
 }
 //
 // MARK: UI Configuration
