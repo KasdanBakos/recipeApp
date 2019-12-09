@@ -648,12 +648,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SYc-HV-1ep">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SYc-HV-1ep">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Szf-Co-YoG">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Szf-Co-YoG">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvY-h0-2Kd">
+                                                <rect key="frame" x="20" y="487" width="99" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe Name" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMw-wT-Zj8">
                                                 <rect key="frame" x="20" y="248" width="330" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -662,7 +671,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ROT-Sc-TXn">
-                                                <rect key="frame" x="20" y="706" width="374" height="369"/>
+                                                <rect key="frame" x="20" y="527" width="374" height="146"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
@@ -705,7 +714,7 @@
                                                 </connections>
                                             </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MzQ-ev-6P7">
-                                                <rect key="frame" x="20" y="329" width="374" height="302"/>
+                                                <rect key="frame" x="20" y="329" width="374" height="129"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="sectionIndexBackgroundColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -724,36 +733,15 @@
                                                     <outlet property="delegate" destination="VWq-8n-gFD" id="8Ga-Uu-VOq"/>
                                                 </connections>
                                             </tableView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvY-h0-2Kd">
-                                                <rect key="frame" x="20" y="656" width="99" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="Szf-Co-YoG" firstAttribute="height" secondItem="SYc-HV-1ep" secondAttribute="height" priority="250" id="042-jY-tQI"/>
-                                    <constraint firstItem="Szf-Co-YoG" firstAttribute="top" secondItem="SYc-HV-1ep" secondAttribute="top" id="QWK-Oh-d2H"/>
-                                    <constraint firstAttribute="bottom" secondItem="Szf-Co-YoG" secondAttribute="bottom" id="U97-qf-r9p"/>
-                                    <constraint firstAttribute="trailing" secondItem="Szf-Co-YoG" secondAttribute="trailing" id="ZVs-Jy-9fA"/>
-                                    <constraint firstItem="Szf-Co-YoG" firstAttribute="width" secondItem="SYc-HV-1ep" secondAttribute="width" id="iSA-Pn-UUR"/>
-                                    <constraint firstItem="Szf-Co-YoG" firstAttribute="leading" secondItem="SYc-HV-1ep" secondAttribute="leading" id="p3V-jU-TU4"/>
-                                </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="eCE-l5-3et"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="PBY-od-qNm"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="SYc-HV-1ep" secondAttribute="bottom" id="Abk-W9-XdY"/>
-                            <constraint firstItem="SYc-HV-1ep" firstAttribute="top" secondItem="TaV-1O-ufp" secondAttribute="top" id="SSU-fb-egB"/>
-                            <constraint firstItem="SYc-HV-1ep" firstAttribute="trailing" secondItem="TaV-1O-ufp" secondAttribute="trailing" id="T2t-tH-IBd"/>
-                            <constraint firstItem="SYc-HV-1ep" firstAttribute="leading" secondItem="TaV-1O-ufp" secondAttribute="leading" id="auR-TR-zam"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TaV-1O-ufp"/>
                     </view>
                     <navigationItem key="navigationItem" id="M6d-IZ-yno"/>
@@ -811,7 +799,7 @@
         <image name="safari.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="si4-8W-6bT"/>
+        <segue reference="OO6-Pj-YBo"/>
         <segue reference="5Nh-oF-HfS"/>
         <segue reference="CBa-XP-ew7"/>
     </inferredMetricsTieBreakers>

@@ -9,6 +9,36 @@ import UIKit
 import CoreData
 import Foundation
 
+
+let filterList =
+["African",
+"American",
+"British",
+"Cajun",
+"Caribbean",
+"Chinese",
+"Eastern European",
+"European",
+"French",
+"German",
+"Greek",
+"Indian",
+"Irish",
+"Italian",
+"Japanese",
+"Jewish",
+"Korean",
+"Latin American",
+"Mediterranean",
+"Mexican",
+"Middle Eastern",
+"Nordic",
+"Southern",
+"Spanish",
+"Thai",
+"Vietnamese"]
+
+
 class FilterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   @IBOutlet var filterTable: UITableView!
@@ -31,33 +61,6 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     
     dismiss(animated: true, completion: nil)
   }
-  
-  let filterList =   ["African",
-  "American",
-  "British",
-  "Cajun",
-  "Caribbean",
-  "Chinese",
-  "Eastern European",
-  "European",
-  "French",
-  "German",
-  "Greek",
-  "Indian",
-  "Irish",
-  "Italian",
-  "Japanese",
-  "Jewish",
-  "Korean",
-  "Latin American",
-  "Mediterranean",
-  "Mexican",
-  "Middle Eastern",
-  "Nordic",
-  "Southern",
-  "Spanish",
-  "Thai",
-  "Vietnamese"]
   
   @IBAction func doneButton(_ sender: UIBarButtonItem) {
     let filterTitlesArray = viewModel.selectedFilters.map { $0.title! }
