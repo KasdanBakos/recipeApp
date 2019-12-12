@@ -42,7 +42,7 @@ class RecipesViewController: UIViewController, UICollectionViewDataSource, UICol
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    searchBar.delegate = self
+    self.searchBar.delegate = self
     if self.query == nil {
       self.searchBar.text = " "
     } else {
@@ -52,22 +52,18 @@ class RecipesViewController: UIViewController, UICollectionViewDataSource, UICol
     if (!viewModel.title.isEmpty) {
       self.pageTitleLabel.text = viewModel.title
     } else {
-//      self.pageTitleLabel.text = "Recipes"
-      print(self.pageTitle)
       if self.pageTitle == nil || self.pageTitle!.isEmpty {
          self.pageTitleLabel.text = "Recipes"
        } else {
          self.pageTitleLabel.text = self.pageTitle
        }
     }
-   
     
-//     self.pageSubtitle == nil {
-//      self.pageSubtitleLabel.text = "Recipes"
-//    } else {
-//      self.pageSubtitleLabel.text = self.pageSubtitle
-//    }
-//
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        print("why")
+        performSegue(withIdentifier: "showAllSuggestedRecipes", sender: self)
+    }
     
     
     if self.filters == nil {
